@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-//置き換え
+//暗号化
 void Replacetext(char ch, char *buffer) {
 	switch (tolower((unsigned char)ch)) {
 		case 'k': strcat(buffer, "!1"); break;
@@ -37,10 +37,15 @@ void Replacetext(char ch, char *buffer) {
 	}
 }
 
+//アルファベットのみの文
 void Englishtext(char ch, char *buffer) {
+	char temp[2];
 	if (isalpha((unsigned char)ch) == 0 && ch != '\n') {
-		ch = ' ';
-	}
+		temp[0] = ' ';
+	} else {
+                temp[0] = ch;
+        }
+	strcat(buffer, temp);
 }
 
 		
@@ -55,8 +60,6 @@ int main() {
 			//Englishtext(line[i], buffer);	//英文のみを表示したい場合は上の文をコメントアウトしこちらを適用
 		}
 	}
-
 	printf("%s", buffer);
-
 	return 0;
 }
