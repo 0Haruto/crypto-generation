@@ -1,0 +1,20 @@
+name: C Program Test
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile program
+      run: g++ -o crypto_generation crypto_generation.cpp
+
+    - name: Run tests
+      run: |
+        echo Hello, World! | ./crypto_generation > output.txt
+        diff output.txt tester_output.txt
+
