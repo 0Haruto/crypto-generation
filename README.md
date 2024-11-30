@@ -62,18 +62,14 @@ $ cat input.txt | ./crypto_generation.py
 ```
 $ git clone https://github.com/0Haruto/robosystem-test.git
 ```
-
+- ファイルに実行権限が付いていない場合は以下のコマンドから実行権限を付与してください。
+```
+$ cd robosystem-test
+$ chmod +x crypto_generation.py test_script.sh
+```
 ## シェルスクリプトを使ったテスト
 
-- シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマン>ドを同時にテストすることができます
-### 準備
-- シェルスクリプトに実行権限を付与します。
-```
-$ cd robosystem-test.git
-$ chmod +x test_script.sh
-#実行ファイルに実行権限の付与ができていない場合
-$ chmod +x crypto_generation.py
-```
+- シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマンドを同時にテストすることができます
 
 ### テストを実行
 - 以下のコマンドからシェルスクリプトを実行できます
