@@ -12,10 +12,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: 
-      run: g++ -o crypto_generation crypto_generation.cpp
-
-    - name: Run tests
-      run: |
-        echo Hello, World! | ./crypto_generation.py
+    - name: All tests
+      run: bash -xv ./test_script.sh
 
