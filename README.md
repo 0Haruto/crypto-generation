@@ -1,7 +1,8 @@
 # robosystem-test [![Build Status](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml/badge.svg)](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml)
 
 ## 概要
-- このプログラムは、入力したテキストを受け取り、半角英字を指定された記号に置き換えて暗号化するものです。また、オプションとして、半角英字以外の文字や記号を空白に置き換える機能もございます。
+- このプログラムは、入力したテキストを受け取り、半角英字を指定された記号に置き換えて暗号化するものです。
+- また、オプションとして、半角英字以外の文字や記号を空白に置き換える機能もございます。
 
 ## クイックスタート
 ### 前提条件
