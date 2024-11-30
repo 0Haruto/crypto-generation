@@ -66,7 +66,7 @@ $ git clone https://github.com/0Haruto/robosystem-test.git
 ## シェルスクリプトを使ったテスト
 
 - シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマン>ドを同時にテストすることができます
-###準備
+### 準備
 - シェルスクリプトに実行権限を付与します。
 ```
 $ cd robosystem-test.git
