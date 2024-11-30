@@ -1,8 +1,32 @@
 # robosystem-test [![Build Status](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml/badge.svg)](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml)
-この資料はUbuntu 22.04 LTSを元に書いています
 
 ## 概要
-このプログラムは、入力したテキストを受け取り、半角英字を指定された記号に置き換えて暗号化するフィルタコマンドです。また、オプションとして、半角英字以外の文字や記号を空白に置き換える機能もあります。
+このプログラムは、入力したテキストを受け取り、半角英字を指定された記号に置き換えて暗号化するものです。また、オプションとして、半角英字以外の文字や記号を空白に置き換える機能もございます。
+
+## クイックスタート
+### 前提条件
+- Python 3.7以上がインストールされていること
+### インストール
+リポジトリをクローンします。 
+```
+$ git clone https://github.com/0Haruto/robosystem-test.git
+```
+### 実行
+
+実行ファイルに実行権限を付与します。
+```
+$ cd robosystem-test
+$ chmod +x crypto_generation.py
+```
+
+以下のコマンドから実行します。
+```
+$ echo "Hello, World!" | ./crypto_generation.py
+```
+次のような実行結果が得られます
+```
+85!2!2!5  ?3!5!8!24
+```
 
 ## 使用方法
 
@@ -11,7 +35,7 @@
 以下のコマンドから実行できます。
 
 ```
-$ echo 任意の文字列 | ./crypto_generation
+$ echo 任意の文字列 | ./crypto_generation.py
 ```
 
 "任意の文字列"の部分に入力した半角英字のみが暗号化され、その他文字や記号はすべて空白に置き換えられます。
@@ -25,70 +49,74 @@ $ echo 任意の文字列 | ./crypto_generation
 以下のコマンドから実行できます。
 
 ```
-$ cat input.txt | ./crypto_generation
+$ cat input.txt | ./crypto_generation.py
 ```
 
 input.txtに保存されたテキストが暗号化され、標準出力に出力されます。改行も読み込む事が可能です。
 
 * 注意事項
-	テキストファイルは予め作成してください
 	テキストファイルはinput.txtでは無く任意のテキストファイルで問題ありませんがその場合"cat"と"|"の間のファイル名を変更してください。また、上のコマンドでは同じディレクトリ内である必要があります。
 
-### 3, パイプを使用せず入力する場合
-
-以下のコマンドから実行できます。
-
-```
-$ ./crypto_generation
-```
-
-上のコマンドを入力したあと空白の部分で任意のテキストを入力してください。改行も使用できます。
-
-* 注意事項
-	改行が使用できる関係上、改行で終了することができません。テキストを入力し終わったらCtrl + Dで終了してください。
-
-## インストールとコンパイル
-以下のコマンドからインストールできます
+## インストール
+以下のコマンドからインストールをすることができます
 ```
 $ git clone https://github.com/0Haruto/robosystem-test.git
 ```
-以下のコマンドからコンパイルができます。
 
+## シェルスクリプトを使ったテスト
+
+シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマン>ドを同時にテストすることができます
+###準備
+シェルスクリプトに実行権限を付与します。
 ```
-$ cd robosystem-test
-$ g++ -o crypto_generation crypto_generation.cpp
+$ cd robosystem-test.git
+$ chmod +x test_script.sh
+#実行ファイルに実行権限の付与ができていない場合
+$ chmod +x crypto_generation.py
+```
+
+###テストを実行
+以下のコマンドからシェルスクリプトを実行できます
+```
+$ ./test_script.sh
+```
+テストをパスした場合次のような結果になります。
+```
+Test 1 passed!
+Test 2 passed!
+Test 3 passed!
 ```
 
 ## オプション
 このプログラムは暗号化する前のテキストから半角英字と改行のみを出力することも可能です。
 ```
-for (int i = 0; line[i] != '\0'; i++) {
-			Replacetext(line[i], buffer);
-			//Englishtext(line[i], buffer);	//英文のみを表示したい場合は上の文をコメントアウトしこちらを適用
-		}
+def main():
+    import sys
+    buffer = []
+
+    for line in sys.stdin:
+        for ch in line:
+            buffer.append(replace_text(ch))
+            #buffer.append(english_text(ch))  # 英文のみを表示したい場合はこちらを使用
+
+    print(''.join(buffer))
 ```
-int main内にあるこのコマンドから
+def main内にあるこのコマンドから
 ```
-Replacetext(line[i], buffer);
+buffer.append(replace_text(ch))
 ```
 をコメントアウトし
 ```
-//Englishtext(line[i], buffer); 
+#buffer.append(english_text(ch)) 
 ```
-の"//"を外すことで切り替えることができます。
+の"#"を外すことで切り替えることができます。
 
-## よくあるエラーと糸口
-* 動かない、ファイルが見つからない。
-	 コマンドのスペルミスまたはファイルの置き場所が違う可能性があります。
-* 実行ファイルがない。
-	 コンパイルをしてください。
-* 実行したとたん固まる、落ちる。
-	 テキスト量が極端に多い可能性があります。
+## よくありそうなエラーと糸口
+
 * 動いたが文字が何も出ない。
 	 半角英字以外の文字は空白に置き換わります。全角のアルファベットも空白になるので注意が必要です。
 
 ## 最後に
-* このプログラムはc++で書かれています。バージョンやデバイスによっては環境をインストールすること必要です。
 * このプログラムは暗号化はできますが、復元機能はございません。ご了承ください。
 ## ライセンス
 このプログラムはBSD-3-Clauseライセンスの下で配布されています。詳細なライセンス情報については、[LICENSE](./LICENSE) ファイルを参照してください。

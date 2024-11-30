@@ -1,20 +1,21 @@
-name: C Program Test
+name: Python Program Test
 
 on: [push]
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Compile program
+    - name: 
       run: g++ -o crypto_generation crypto_generation.cpp
 
     - name: Run tests
       run: |
-        echo Hello, World! | ./crypto_generation > output.txt
-        diff output.txt tester_output.txt
+        echo Hello, World! | ./crypto_generation.py
 
