@@ -75,7 +75,7 @@ $ chmod +x test_script.sh
 $ chmod +x crypto_generation.py
 ```
 
-###テストを実行
+### テストを実行
 - 以下のコマンドからシェルスクリプトを実行できます
 ```
 $ ./test_script.sh
@@ -101,15 +101,15 @@ def main():
 
     print(''.join(buffer))
 ```
-- def main内にあるこのコマンドから
+def main内にあるこのコマンドから
 ```
 buffer.append(replace_text(ch))
 ```
-- をコメントアウトし
+をコメントアウトし
 ```
 #buffer.append(english_text(ch)) 
 ```
-- の"#"を外すことで切り替えることができます。
+の"#"を外すことで切り替えることができます。
 
 ## よくありそうなエラーと糸口
 
