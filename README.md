@@ -14,17 +14,17 @@ $ git clone https://github.com/0Haruto/robosystem-test.git
 ```
 ### 実行
 
-- 実行ファイルに実行権限を付与します。
+- 1, 実行ファイルに実行権限を付与します。
 ```
 $ cd robosystem-test
 $ chmod +x crypto_generation.py
 ```
 
-- 以下のコマンドから実行します。
+- 2, 以下のコマンドから実行します。
 ```
 $ echo "Hello, World!" | ./crypto_generation.py
 ```
-- 次のような実行結果が得られます
+- 3, 次のような実行結果が得られます
 ```
 85!2!2!5  ?3!5!8!24
 ```
