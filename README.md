@@ -7,7 +7,7 @@
 ## クイックスタート
 ### 前提条件
 - Python 3.7以上がインストールされていること
-### インストール
+### クローン
 - リポジトリをクローンします。 
 ```
 $ git clone https://github.com/0Haruto/robosystem-test.git
@@ -58,8 +58,8 @@ $ cat input.txt | ./crypto_generation.py
 * 注意事項
 	- テキストファイルはinput.txtでは無く任意のテキストファイルで問題ありませんがその場合"cat"と"|"の間のファイル名を変更してください。また、上のコマンドでは同じディレクトリ内である必要があります。
 
-## インストール
-- 以下のコマンドからインストールをすることができます
+## クローンとセットアップ
+- 以下のコマンドからリポジトリをクローンすることができます
 ```
 $ git clone https://github.com/0Haruto/robosystem-test.git
 ```
