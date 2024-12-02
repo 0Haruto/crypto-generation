@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2024 Haruto Yamamoto
+# SPDX-License-Identifier: BSD-3-Clause
 
 # テストケース1
 echo "Hello, World!" | ./crypto_generation.py > output1.txt
