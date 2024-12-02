@@ -58,16 +58,6 @@ $ cat input.txt | ./crypto_generation.py
 * 注意事項
 	- テキストファイルはinput.txtでは無く任意のテキストファイルで問題ありませんがその場合"cat"と"|"の間のファイル名を変更してください。また、上のコマンドでは同じディレクトリ内である必要があります。
 
-## クローンとセットアップ
-- 以下のコマンドからリポジトリをクローンすることができます
-```
-$ git clone https://github.com/0Haruto/robosystem-test.git
-```
-- ファイルに実行権限が付いていない場合は以下のコマンドから実行権限を付与してください。
-```
-$ cd robosystem-test
-$ chmod +x crypto_generation.py test_script.sh
-```
 ## シェルスクリプトを使ったテスト
 
 - シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマンドを同時にテストすることができます
