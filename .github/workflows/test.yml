@@ -13,5 +13,5 @@ jobs:
       uses: actions/checkout@v4
 
     - name: All tests
-      run: bash -xv ./test_script.bash
+      run: bash -xv ./test-crypto_generation.bash
 

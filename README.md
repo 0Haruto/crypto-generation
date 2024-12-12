@@ -1,4 +1,4 @@
-# robosystem-test [![Build Status](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml/badge.svg)](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml)
+# crypto-generation [![Build Status](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml/badge.svg)](https://github.com/0Haruto/robosystem-test/actions/workflows/test.yml)
 
 ## 概要
 - このプログラムは、入力したテキストを受け取り、半角英字を指定された記号に置き換えて暗号化するものです。
@@ -10,13 +10,13 @@
 ### クローン
 - リポジトリをクローンします。 
 ```
-$ git clone https://github.com/0Haruto/robosystem-test.git
+$ git clone https://github.com/0Haruto/crypto-generation.git
 ```
 ### 実行
 
 - 1, 実行ファイルに実行権限を付与します。
 ```
-$ cd robosystem-test
+$ cd crypto-generation
 $ chmod +x crypto_generation.py
 ```
 
@@ -60,12 +60,12 @@ $ cat input.txt | ./crypto_generation.py
 
 ## シェルスクリプトを使ったテスト
 
-- シェルスクリプトも使用し、上で実行したコマンドと合わせて３つのコマンドを同時にテストすることができます
+- シェルスクリプトを使用し、上で実行したコマンドと合わせて３つのコマンドを同時にテストすることができます
 
 ### テストを実行
 - 以下のコマンドからシェルスクリプトを実行できます
 ```
-$ ./test_script.sh
+$ ./test-crypto_generation.bash
 ```
 - テストをパスした場合次のような結果になります。
 ```
@@ -76,7 +76,7 @@ Test 3 passed!
 
 ## オプション
 - このプログラムは暗号化する前のテキストから半角英字と改行のみを出力することも可能です。
-```
+``` crypto_generation.py
 def main():
     import sys
     buffer = []
@@ -89,11 +89,11 @@ def main():
     print(''.join(buffer))
 ```
 def main内にあるこのコマンドから
-```
+``` crypto_generation.py
 buffer.append(replace_text(ch))
 ```
 をコメントアウトし
-```
+``` crypto_generation.py
 #buffer.append(english_text(ch)) 
 ```
 の"#"を外すことで切り替えることができます。
