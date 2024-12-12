@@ -83,7 +83,7 @@ echo "I love games!"
 # テストケース3
 echo "Let's test this script."
 ```
-一致しなければ「Test  failed!」と表示します。
+一致しなければ「Test  failed!」と表示されます。
 
 ## オプション
 - このプログラムは暗号化する前のテキストから半角英字と改行のみを出力することも可能です。
