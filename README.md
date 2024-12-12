@@ -77,11 +77,11 @@ Test 3 passed!
 テストケース1, 2, 3のそれぞれで次のテキストをパイプでプログラムに入力したとき、期待される出力と実際の出力が一致するか比較しています。
 ```
 # テストケース1
-echo "Hello, World!"
+"Hello, World!"
 # テストケース2
-echo "I love games!"
+"I love games!"
 # テストケース3
-echo "Let's test this script."
+"Let's test this script."
 ```
 一致しなければ「Test  failed!」と表示されます。
 
